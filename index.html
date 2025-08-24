@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Auto Run AI — Automation & AI</title>
+  <meta name="description" content="Automation, RPA and AI assistants that save time and money.">
+  <meta name="theme-color" content="#0f172a">
+  <style>
+    :root{
+      --bg:#0b1020; --bg2:#0e1530; --card:#0f162e;
+      --text:#e7ecf4; --muted:#9aa6b2; --line:#1f2a48;
+      --brand:#22c55e; --brand2:#a3e635;
+      --shadow:0 10px 30px rgba(0,0,0,.35)
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1120px;margin:0 auto;padding:24px}
+    /* nav */
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.2px}
+    .badge{padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:#0f1a3a;color:#cde7ff;font-size:12px}
+    .lang{display:flex;gap:8px}
+    .chip{padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:#132046;color:#fff;cursor:pointer}
+    .chip.active{background:#213264}
+    /* buttons */
+    .btn{display:inline-flex;gap:8px;align-items:center;padding:12px 18px;border-radius:12px;border:1px solid var(--line);background:#132046;color:#fff;box-shadow:var(--shadow)}
+    .btn.primary{background:linear-gradient(90deg,var(--brand),var(--brand2));color:#0b1020;border:none}
+    /* global spacing */
+    .section{padding:56px 0}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px;box-shadow:var(--shadow)}
+    .hero h1{margin:0 0 8px;font-size:42px;line-height:1.15}
+    .muted{color:var(--muted)}
+    .stack{display:grid;gap:14px}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    /* grid */
+    .grid{display:grid;gap:16px}
+    @media(min-width:900px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+    .kpi{display:grid;gap:8px}
+    /* form */
+    .form{display:grid;gap:12px;max-width:640px}
+    .input,.textarea{
+      width:100%;padding:12px 14px;border-radius:12px;background:#0e1a3a;border:1px solid var(--line);color:#fff
+    }
+    .textarea{min-height:140px;resize:vertical}
+    .ok{display:none;margin-top:8px;color:#9effc3}
+    .err{display:none;margin-top:8px;color:#ff9e9e}
+    /* i18n */
+    .i18n{display:none}
+    html[data-lang="en"] .en{display:block}
+    html[data-lang="he"] .he{display:block}
+    html[data-lang="he"] body{direction:rtl}
+    html[data-lang="he"] h1,html[data-lang="he"] h2,html[data-lang="he"] p{text-align:right}
+  </style>
+</head>
+<body>
+  <header class="container nav">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" stroke="#22c55e" stroke-width="2"/>
+        <path d="M7 12a5 5 0 1 0 10 0" stroke="#a3e635" stroke-width="2"/>
+      </svg>
+      <span>Auto Run AI</span>
+      <span class="badge">RPA • AI • Automation</span>
+    </div>
+    <div class="lang">
+      <button id="b-en" class="chip active" onclick="setLang('en')">EN</button>
+      <button id="b-he" class="chip" onclick="setLang('he')">עברית</button>
+      <a class="btn primary" href="mailto:contact@auto-runai.com">Get a Proposal</a>
+    </div>
+  </header>
+
+  <main class="container">
+	<!-- HERO -->
+	<section class="section hero">
+	  <!-- English -->
+	  <div class="i18n en">
+		<h1>RPA to AI — Automation that Delivers Results</h1>
+		<p class="muted">
+		  We design and deploy intelligent automations in Hebrew & English, helping enterprises cut costs,
+		  accelerate processes, and delight customers.
+		</p>
+	  </div>
+
+	  <!-- Hebrew -->
+	  <div class="i18n he">
+		<h1>RPA ו AI — אוטומציה שמביאה תוצאות</h1>
+		<p class="muted">
+		  אנו מתכננים ומיישמים אוטומציות חכמות בעברית ובאנגלית, המסייעות לארגונים לחסוך בעלויות,
+		  לייעל תהליכים ולשפר את חוויית הלקוח.
+		</p>
+	  </div>
+
+	  <div class="row">
+		<a class="btn primary" href="mailto:contact@auto-runai.com">contact@auto-runai.com</a>
+		<a class="btn" href="#contact">Contact form</a>
+	  </div>
+	</section>
+
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="en i18n">
+        <h2>What we deliver</h2>
+        <p class="muted">Outcome-focused services with fast time-to-value.</p>
+      </div>
+      <div class="he i18n">
+        <h2>מה אנחנו מספקים</h2>
+        <p class="muted">שירותים ממוקדי תוצאה עם זמן הטמעה קצר.</p>
+      </div>
+
+      <div class="grid cols-3">
+        <div class="card kpi">
+          <div class="en i18n stack">
+            <h3>Robotic Process Automation</h3>
+            <p class="muted">UiPath & Power Automate bots that remove repetitive work across finance and ops.</p>
+          </div>
+          <div class="he i18n stack">
+            <h3>אוטומציה רובוטית (RPA)</h3>
+            <p class="muted">בוטים של UiPath/Power Automate שמסירים עבודה חוזרת בפיננסים ובתפעול.</p>
+          </div>
+        </div>
+
+        <div class="card kpi">
+          <div class="en i18n stack">
+            <h3>AI Customer Chatbots</h3>
+            <p class="muted">Assistants for Web/WhatsApp connected to your CRM & knowledge base.</p>
+          </div>
+          <div class="he i18n stack">
+            <h3>צ׳אטבוטים חכמים</h3>
+            <p class="muted">עוזרים לאתר/וואטסאפ שמחוברים ל-CRM ולבסיס הידע.</p>
+          </div>
+        </div>
+
+        <div class="card kpi">
+          <div class="en i18n stack">
+            <h3>Document Automation</h3>
+            <p class="muted">Intelligent extraction & validation for invoices, forms and contracts.</p>
+          </div>
+          <div class="he i18n stack">
+            <h3>אוטומציית מסמכים</h3>
+            <p class="muted">חילוץ ואימות חכם לחשבוניות, טפסים וחוזים.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+<!-- WHY US (Cards) -->
+<section id="why" class="section">
+  <div class="why-grid">
+    <!-- EN -->
+    <div class="i18n en">
+      <h2 class="why-title">Why Auto Run AI?</h2>
+      <div class="why-cards">
+        <article class="why-card">
+          <div class="why-icon">🛠️</div>
+          <h3>Hands-on expertise</h3>
+          <p>7+ years shipping RPA & AI across finance, insurance, utilities, and healthcare.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-icon">📊</div>
+          <h3>Real business impact</h3>
+          <p>Not just bots—measurable savings, faster cycle times, higher CSAT.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-icon">⚡</div>
+          <h3>Fast MVPs</h3>
+          <p>From idea to working prototype in weeks, not months.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-icon">🌐</div>
+          <h3>Bilingual & local</h3>
+          <p>Hebrew/English support and deep knowledge of the Israeli market.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-icon">🔒</div>
+          <h3>Enterprise-ready</h3>
+          <p>Security & compliance. Integrations with Dynamics 365, UiPath, SharePoint, Azure.</p>
+        </article>
+      </div>
+      <div class="why-cta">
+        <a class="btn primary" href="mailto:contact@auto-runai.com">Start now</a>
+        <a class="btn" href="#contact">Talk to an expert</a>
+      </div>
+    </div>
+
+    <!-- HE -->
+    <div class="i18n he">
+      <h2 class="why-title">למה לבחור ב-Auto Run AI?</h2>
+      <div class="why-cards">
+        <article class="why-card">
+          <div class="why-icon">🛠️</div>
+          <h3>ניסיון מעשי</h3>
+          <p>מעל 7 שנות הטמעה של RPA ו-AI בפיננסים, ביטוח, תשתיות ובריאות.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-icon">📊</div>
+          <h3>השפעה עסקית</h3>
+          <p>לא עוד “בוטים” – חיסכון מוכח, קיצור זמני טיפול ושיפור חוויית לקוח.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-icon">⚡</div>
+          <h3>MVP מהיר</h3>
+          <p>מ-רעיון לאב־טיפוס עובד בתוך שבועות, לא חודשים.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-icon">🌐</div>
+          <h3>דו-לשוני ומקומי</h3>
+          <p>תמיכה מלאה בעברית/אנגלית והבנה עמוקה של השוק הישראלי.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-icon">🔒</div>
+          <h3>מוכנים לארגונים</h3>
+          <p>אבטחה ותאימות, חיבורים ל-Dynamics 365, UiPath, SharePoint ו-Azure.</p>
+        </article>
+      </div>
+      <div class="why-cta">
+        <a class="btn primary" href="mailto:contact@auto-runai.com">מתחילים</a>
+        <a class="btn" href="#contact">דברו עם מומחה</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="card">
+        <div class="en i18n stack">
+          <h2>Contact us</h2>
+          <p class="muted">Tell us about your process. We reply within 24h.</p>
+          <form id="f-en" class="form" action="https://formspree.io/f/movnaddq" method="POST">
+            <input class="input" type="text"  name="name"  placeholder="Your name"  required>
+            <input class="input" type="email" name="email" placeholder="Your email" required>
+            <textarea class="textarea" name="message" placeholder="Your message" required></textarea>
+            <input type="hidden" name="_subject" value="New inquiry — Auto Run AI (EN)">
+            <input type="text" name="_gotcha" style="display:none">
+            <button class="btn primary" type="submit">Send message</button>
+            <div class="ok" id="ok-en">Thanks! We’ll be in touch.</div>
+            <div class="err" id="err-en">Something went wrong. Please email contact@auto-runai.com.</div>
+          </form>
+        </div>
+
+        <div class="he i18n stack">
+          <h2>צור קשר</h2>
+          <p class="muted">ספר לנו על התהליך שלך. נחזור אליך עד 24 שעות.</p>
+          <form id="f-he" class="form" action="https://formspree.io/f/movnaddq" method="POST">
+            <input class="input" type="text"  name="name"  placeholder="השם שלך" required>
+            <input class="input" type="email" name="email" placeholder="האימייל שלך" required>
+            <textarea class="textarea" name="message" placeholder="ההודעה שלך" required></textarea>
+            <input type="hidden" name="_subject" value="פניה חדשה — Auto Run AI (HE)">
+            <input type="text" name="_gotcha" style="display:none">
+            <button class="btn primary" type="submit">שלח הודעה</button>
+            <div class="ok" id="ok-he">תודה! נחזור אליך בהקדם.</div>
+            <div class="err" id="err-he">אירעה שגיאה. אפשר לפנות ל-contact@auto-runai.com.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container" style="padding:28px 0;border-top:1px solid var(--line);color:#9aa6b2">
+    © <span id="y"></span> Auto Run AI
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    function setLang(lang){
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.lang = (lang === 'he' ? 'he' : 'en');
+      document.getElementById('b-en').classList.toggle('active', lang==='en');
+      document.getElementById('b-he').classList.toggle('active', lang==='he');
+    }
+    setLang(document.documentElement.getAttribute('data-lang') || 'en');
+
+    // lightweight AJAX submit for Formspree (nice inline success state)
+    function hookForm(idOk, idErr, formId){
+      const f = document.getElementById(formId);
+      f.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        const ok = document.getElementById(idOk), err = document.getElementById(idErr);
+        ok.style.display = 'none'; err.style.display='none';
+        try{
+          const res = await fetch(f.action, {
+            method:'POST',
+            headers:{'Accept':'application/json'},
+            body: new FormData(f)
+          });
+          if (res.ok){ f.reset(); ok.style.display='block'; }
+          else { err.style.display='block'; }
+        }catch(_){ err.style.display='block'; }
+      });
+    }
+    hookForm('ok-en','err-en','f-en');
+    hookForm('ok-he','err-he','f-he');
+  </script>
+</body>
+</html>
