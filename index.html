@@ -264,7 +264,7 @@
     © <span id="y"></span> Auto Run AI
   </footer>
 
-  <script>
+  <script type="module">
     document.getElementById('y').textContent = new Date().getFullYear();
 
     function setLang(lang){
@@ -295,6 +295,20 @@
     }
     hookForm('ok-en','err-en','f-en');
     hookForm('ok-he','err-he','f-he');
+
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+    createChat({
+        webhookUrl: 'https://n8n.auto-runai.com/webhook/19b3b571-6d49-4246-a195-dccd4f46667c/chat',
+        title: 'מוקד שירות השומרון',
+        placeholder: 'במה אוכל לעזור?',
+        welcomeMessage: 'שלום! אני העוזר הווירטואלי של המועצה. אשמח לסייע במידע ציבורי.',
+        showWelcomeMessage: true,
+        style: {
+            '--chat-primary-color': '#004a99', // שנה לצבע המותג של המועצה
+        }
+    });
   </script>
 </body>
 </html>
+
