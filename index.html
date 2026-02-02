@@ -12,30 +12,40 @@
       --bg:#0b1020; --bg2:#0e1530; --card:#0f162e;
       --text:#e7ecf4; --muted:#9aa6b2; --line:#1f2a48;
       --brand:#22c55e; --brand2:#a3e635;
-	  --chat-container-direction: rtl;
+      --chat-container-direction: rtl;
       --chat-layout-direction: rtl;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
-	 --chat--message--font-size: 16px;
-        --chat--window--width: 380px; 
+      --chat--message--font-size: 16px;
+      --chat--window--width: 380px; 
     }
+
+    /* --- תיקון מיקום הווידג'ט לימין --- */
     .n8n-chat-widget {
+        left: auto !important; /* משחרר את הצמדה לשמאל */
+        right: 20px !important; /* מצמיד לימין */
+        bottom: 20px !important; /* מרווח מלמטה */
         direction: rtl !important;
         text-align: right !important;
         z-index: 2147483647 !important;
     }
+    
     .n8n-chat-widget * {
         text-align: right !important;
         direction: rtl !important;
     }
+    
     /* הופך את סדר הבועות כך שהאייקון יהיה מימין */
     .chat-message-row {
         flex-direction: row-reverse !important;
     }
+    
     /* מרווח נכון לאייקון בעברית */
     .chat-message-avatar {
         margin-left: 10px !important;
         margin-right: 0 !important;
     }
+
+    /* --- שאר העיצוב של האתר --- */
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
     a{color:inherit;text-decoration:none}
@@ -95,34 +105,29 @@
   </header>
 
   <main class="container">
-	<!-- HERO -->
-	<section class="section hero">
-	  <!-- English -->
-	  <div class="i18n en">
-		<h1>RPA to AI — Automation that Delivers Results</h1>
-		<p class="muted">
-		  We design and deploy intelligent automations in Hebrew & English, helping enterprises cut costs,
-		  accelerate processes, and delight customers.
-		</p>
-	  </div>
+    <section class="section hero">
+      <div class="i18n en">
+        <h1>RPA to AI — Automation that Delivers Results</h1>
+        <p class="muted">
+          We design and deploy intelligent automations in Hebrew & English, helping enterprises cut costs,
+          accelerate processes, and delight customers.
+        </p>
+      </div>
 
-	  <!-- Hebrew -->
-	  <div class="i18n he">
-		<h1>RPA ו AI — אוטומציה שמביאה תוצאות</h1>
-		<p class="muted">
-		  אנו מתכננים ומיישמים אוטומציות חכמות בעברית ובאנגלית, המסייעות לארגונים לחסוך בעלויות,
-		  לייעל תהליכים ולשפר את חוויית הלקוח.
-		</p>
-	  </div>
+      <div class="i18n he">
+        <h1>RPA ו AI — אוטומציה שמביאה תוצאות</h1>
+        <p class="muted">
+          אנו מתכננים ומיישמים אוטומציות חכמות בעברית ובאנגלית, המסייעות לארגונים לחסוך בעלויות,
+          לייעל תהליכים ולשפר את חוויית הלקוח.
+        </p>
+      </div>
 
-	  <div class="row">
-		<a class="btn primary" href="mailto:contact@auto-runai.com">contact@auto-runai.com</a>
-		<a class="btn" href="#contact">Contact form</a>
-	  </div>
-	</section>
+      <div class="row">
+        <a class="btn primary" href="mailto:contact@auto-runai.com">contact@auto-runai.com</a>
+        <a class="btn" href="#contact">Contact form</a>
+      </div>
+    </section>
 
-
-    <!-- SERVICES -->
     <section id="services" class="section">
       <div class="en i18n">
         <h2>What we deliver</h2>
@@ -169,85 +174,72 @@
       </div>
     </section>
 
-    <!-- WHY -->
-<!-- WHY US (Cards) -->
-<section id="why" class="section">
-  <div class="why-grid">
-    <!-- EN -->
-    <div class="i18n en">
-      <h2 class="why-title">Why Auto Run AI?</h2>
-      <div class="why-cards">
-        <article class="why-card">
-          <div class="why-icon">🛠️</div>
-          <h3>Hands-on expertise</h3>
-          <p>7+ years shipping RPA & AI across finance, insurance, utilities, and healthcare.</p>
-        </article>
-        <article class="why-card">
-          <div class="why-icon">📊</div>
-          <h3>Real business impact</h3>
-          <p>Not just bots—measurable savings, faster cycle times, higher CSAT.</p>
-        </article>
-        <article class="why-card">
-          <div class="why-icon">⚡</div>
-          <h3>Fast MVPs</h3>
-          <p>From idea to working prototype in weeks, not months.</p>
-        </article>
-        <article class="why-card">
-          <div class="why-icon">🌐</div>
-          <h3>Bilingual & local</h3>
-          <p>Hebrew/English support and deep knowledge of the Israeli market.</p>
-        </article>
-        <article class="why-card">
-          <div class="why-icon">🔒</div>
-          <h3>Enterprise-ready</h3>
-          <p>Security & compliance. Integrations with Dynamics 365, UiPath, SharePoint, Azure.</p>
-        </article>
-      </div>
-      <div class="why-cta">
-        <a class="btn primary" href="mailto:contact@auto-runai.com">Start now</a>
-        <a class="btn" href="#contact">Talk to an expert</a>
-      </div>
-    </div>
+    <section id="why" class="section">
+      <div class="why-grid">
+        <div class="i18n en">
+          <h2 class="why-title">Why Auto Run AI?</h2>
+          <div class="why-cards">
+            <article class="why-card">
+              <div class="why-icon">🛠️</div>
+              <h3>Hands-on expertise</h3>
+              <p>7+ years shipping RPA & AI across finance, insurance, utilities, and healthcare.</p>
+            </article>
+            <article class="why-card">
+              <div class="why-icon">📊</div>
+              <h3>Real business impact</h3>
+              <p>Not just bots—measurable savings, faster cycle times, higher CSAT.</p>
+            </article>
+            <article class="why-card">
+              <div class="why-icon">⚡</div>
+              <h3>Fast MVPs</h3>
+              <p>From idea to working prototype in weeks, not months.</p>
+            </article>
+            <article class="why-card">
+              <div class="why-icon">🌐</div>
+              <h3>Bilingual & local</h3>
+              <p>Hebrew/English support and deep knowledge of the Israeli market.</p>
+            </article>
+            <article class="why-card">
+              <div class="why-icon">🔒</div>
+              <h3>Enterprise-ready</h3>
+              <p>Security & compliance. Integrations with Dynamics 365, UiPath, SharePoint, Azure.</p>
+            </article>
+          </div>
+        </div>
 
-    <!-- HE -->
-    <div class="i18n he">
-      <h2 class="why-title">למה לבחור ב-Auto Run AI?</h2>
-      <div class="why-cards">
-        <article class="why-card">
-          <div class="why-icon">🛠️</div>
-          <h3>ניסיון מעשי</h3>
-          <p>מעל 7 שנות הטמעה של RPA ו-AI בפיננסים, ביטוח, תשתיות ובריאות.</p>
-        </article>
-        <article class="why-card">
-          <div class="why-icon">📊</div>
-          <h3>השפעה עסקית</h3>
-          <p>לא עוד “בוטים” – חיסכון מוכח, קיצור זמני טיפול ושיפור חוויית לקוח.</p>
-        </article>
-        <article class="why-card">
-          <div class="why-icon">⚡</div>
-          <h3>MVP מהיר</h3>
-          <p>מ-רעיון לאב־טיפוס עובד בתוך שבועות, לא חודשים.</p>
-        </article>
-        <article class="why-card">
-          <div class="why-icon">🌐</div>
-          <h3>דו-לשוני ומקומי</h3>
-          <p>תמיכה מלאה בעברית/אנגלית והבנה עמוקה של השוק הישראלי.</p>
-        </article>
-        <article class="why-card">
-          <div class="why-icon">🔒</div>
-          <h3>מוכנים לארגונים</h3>
-          <p>אבטחה ותאימות, חיבורים ל-Dynamics 365, UiPath, SharePoint ו-Azure.</p>
-        </article>
+        <div class="i18n he">
+          <h2 class="why-title">למה לבחור ב-Auto Run AI?</h2>
+          <div class="why-cards">
+            <article class="why-card">
+              <div class="why-icon">🛠️</div>
+              <h3>ניסיון מעשי</h3>
+              <p>מעל 7 שנות הטמעה של RPA ו-AI בפיננסים, ביטוח, תשתיות ובריאות.</p>
+            </article>
+            <article class="why-card">
+              <div class="why-icon">📊</div>
+              <h3>השפעה עסקית</h3>
+              <p>לא עוד “בוטים” – חיסכון מוכח, קיצור זמני טיפול ושיפור חוויית לקוח.</p>
+            </article>
+            <article class="why-card">
+              <div class="why-icon">⚡</div>
+              <h3>MVP מהיר</h3>
+              <p>מ-רעיון לאב־טיפוס עובד בתוך שבועות, לא חודשים.</p>
+            </article>
+            <article class="why-card">
+              <div class="why-icon">🌐</div>
+              <h3>דו-לשוני ומקומי</h3>
+              <p>תמיכה מלאה בעברית/אנגלית והבנה עמוקה של השוק הישראלי.</p>
+            </article>
+            <article class="why-card">
+              <div class="why-icon">🔒</div>
+              <h3>מוכנים לארגונים</h3>
+              <p>אבטחה ותאימות, חיבורים ל-Dynamics 365, UiPath, SharePoint ו-Azure.</p>
+            </article>
+          </div>
+        </div>
       </div>
-      <div class="why-cta">
-        <a class="btn primary" href="mailto:contact@auto-runai.com">מתחילים</a>
-        <a class="btn" href="#contact">דברו עם מומחה</a>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="card">
         <div class="en i18n stack">
@@ -290,17 +282,22 @@
   <script type="module">
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    function setLang(lang){
+    // --- התיקון לכפתורי השפה ---
+    // הגדרנו את הפונקציה על window כדי שהכפתורים ב-HTML יכירו אותה
+    window.setLang = function(lang){
       document.documentElement.setAttribute('data-lang', lang);
       document.documentElement.lang = (lang === 'he' ? 'he' : 'en');
       document.getElementById('b-en').classList.toggle('active', lang==='en');
       document.getElementById('b-he').classList.toggle('active', lang==='he');
     }
-    setLang(document.documentElement.getAttribute('data-lang') || 'en');
+    
+    // אתחול ראשוני
+    window.setLang(document.documentElement.getAttribute('data-lang') || 'en');
 
-    // lightweight AJAX submit for Formspree (nice inline success state)
+    // lightweight AJAX submit for Formspree
     function hookForm(idOk, idErr, formId){
       const f = document.getElementById(formId);
+      if(!f) return;
       f.addEventListener('submit', async (e)=>{
         e.preventDefault();
         const ok = document.getElementById(idOk), err = document.getElementById(idErr);
@@ -318,43 +315,34 @@
     }
     hookForm('ok-en','err-en','f-en');
     hookForm('ok-he','err-he','f-he');
-	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-	
-	    createChat({
-	        // 1. הכתובת שלך (החלף לכתובת האמיתית!)
-	        webhookUrl: 'https://YOUR_REAL_WEBHOOK_URL/webhook/YOUR_ID',
-	
-	        // 2. הפתרון ל"נתן": אנחנו דורסים את ההודעות ההתחלתיות
-	        // אם לא תכתוב את זה, הוא יביא את נתן כברירת מחדל
-	        initialMessages: [
-	            'שלום! אני העוזר הווירטואלי של המועצה.',
-	            'איך אני יכול לעזור לך היום?'
-	        ],
-	
-	        // 3. תרגום שאר הממשק לעברית (דורס את האנגלית)
-	        i18n: {
-	            en: {
-	                title: 'מוקד מידע שומרון',
-	                subtitle: 'מענה אוטומטי 24/7',
-	                footer: '',
-	                getStarted: 'התחל שיחה חדשה',
-	                inputPlaceholder: 'הקלד את השאלה שלך כאן...',
-	            }
-	        },
-	
-	        // 4. ניקוי זיכרון כדי למחוק שיחות ישנות
-	        // שנה את המספר בסוף אם תרצה לנקות שוב בעתיד
-	        chatSessionKey: 'shomron_chat_v1' 
-	    });
+
+    // --- הטמעת הווידג'ט ---
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+    
+    createChat({
+        // שים כאן את הכתובת האמיתית שלך!
+        webhookUrl: 'https://YOUR_REAL_WEBHOOK_URL/webhook/YOUR_ID',
+
+        // דריסת הודעות הפתיחה (מוחק את נתן)
+        initialMessages: [
+            'שלום! אני העוזר הווירטואלי של המועצה.',
+            'איך אני יכול לעזור לך היום?'
+        ],
+
+        // תרגום לעברית
+        i18n: {
+            en: {
+                title: 'מוקד מידע שומרון',
+                subtitle: 'מענה אוטומטי 24/7',
+                footer: '',
+                getStarted: 'התחל שיחה חדשה',
+                inputPlaceholder: 'הקלד את השאלה שלך כאן...',
+            }
+        },
+
+        // מפתח סשן לניקוי זיכרון
+        chatSessionKey: 'shomron_chat_v1' 
+    });
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
