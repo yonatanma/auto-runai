@@ -12,7 +12,17 @@
       --bg:#0b1020; --bg2:#0e1530; --card:#0f162e;
       --text:#e7ecf4; --muted:#9aa6b2; --line:#1f2a48;
       --brand:#22c55e; --brand2:#a3e635;
+	  --chat-container-direction: rtl !important;
       --shadow:0 10px 30px rgba(0,0,0,.35)
+    }
+    .n8n-chat-widget {
+        direction: rtl !important;
+        text-align: right !important;
+    }
+    /* יישור תיבת הטקסט שבה המשתמש כותב */
+    .n8n-chat-widget .chat-input {
+        direction: rtl !important;
+        text-align: right !important;
     }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
@@ -311,5 +321,6 @@
   </script>
 </body>
 </html>
+
 
 
