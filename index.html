@@ -15,16 +15,27 @@
 	  --chat-container-direction: rtl;
       --chat-layout-direction: rtl;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
-	}
-	.n8n-chat-widget { 
-            direction: rtl !important; 
-            text-align: right !important; 
-            z-index: 99999 !important; /* מוודא שזה מעל הכל */
-        }
-        .n8n-chat-widget * { 
-            direction: rtl !important; 
-            text-align: right !important; 
-        }
+	 --chat--message--font-size: 16px;
+        --chat--window--width: 380px; 
+    }
+    .n8n-chat-widget {
+        direction: rtl !important;
+        text-align: right !important;
+        z-index: 2147483647 !important;
+    }
+    .n8n-chat-widget * {
+        text-align: right !important;
+        direction: rtl !important;
+    }
+    /* הופך את סדר הבועות כך שהאייקון יהיה מימין */
+    .chat-message-row {
+        flex-direction: row-reverse !important;
+    }
+    /* מרווח נכון לאייקון בעברית */
+    .chat-message-avatar {
+        margin-left: 10px !important;
+        margin-right: 0 !important;
+    }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
     a{color:inherit;text-decoration:none}
@@ -309,26 +320,36 @@
     hookForm('ok-he','err-he','f-he');
 	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 	
-	        createChat({
-	            webhookUrl: 'הכנס_כאן_את_הכתובת_שלך_מה_N8N', 
-	            i18n: {
-	                en: { // אנחנו משקרים לווידג'ט: הוא חושב שזה אנגלית, אבל אנחנו שמים עברית
-	                    title: 'מוקד מידע שומרון',
-	                    subtitle: 'מענה אוטומטי 24/7',
-	                    welcomeMessage: 'שלום! אני הבוט של המועצה. איך אפשר לעזור?',
-	                    getStarted: 'התחל שיחה',
-	                    inputPlaceholder: 'כתוב את השאלה שלך כאן...',
-	                }
-	            },
-	            style: {
-	                '--chat-container-direction': 'rtl',
-	                '--chat-layout-direction': 'rtl',
-	                '--chat-primary-color': '#004a99',
+	    createChat({
+	        // 1. הכתובת שלך (החלף לכתובת האמיתית!)
+	        webhookUrl: 'https://YOUR_REAL_WEBHOOK_URL/webhook/YOUR_ID',
+	
+	        // 2. הפתרון ל"נתן": אנחנו דורסים את ההודעות ההתחלתיות
+	        // אם לא תכתוב את זה, הוא יביא את נתן כברירת מחדל
+	        initialMessages: [
+	            'שלום! אני העוזר הווירטואלי של המועצה.',
+	            'איך אני יכול לעזור לך היום?'
+	        ],
+	
+	        // 3. תרגום שאר הממשק לעברית (דורס את האנגלית)
+	        i18n: {
+	            en: {
+	                title: 'מוקד מידע שומרון',
+	                subtitle: 'מענה אוטומטי 24/7',
+	                footer: '',
+	                getStarted: 'התחל שיחה חדשה',
+	                inputPlaceholder: 'הקלד את השאלה שלך כאן...',
 	            }
-	        });
+	        },
+	
+	        // 4. ניקוי זיכרון כדי למחוק שיחות ישנות
+	        // שנה את המספר בסוף אם תרצה לנקות שוב בעתיד
+	        chatSessionKey: 'shomron_chat_v1' 
+	    });
   </script>
 </body>
 </html>
+
 
 
 
