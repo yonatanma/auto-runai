@@ -15,15 +15,15 @@
 	  --chat-container-direction: rtl !important;
       --shadow:0 10px 30px rgba(0,0,0,.35)
     }
-	.n8n-chat-widget {
-        direction: rtl !important;
-    }
-    .n8n-chat-widget .chat-input, 
-    .n8n-chat-widget .chat-header,
-    .n8n-chat-widget .chat-message {
-        direction: rtl !important;
-        text-align: right !important;
-    }
+	.n8n-chat-widget { 
+            direction: rtl !important; 
+            text-align: right !important; 
+            z-index: 99999 !important; /* מוודא שזה מעל הכל */
+        }
+        .n8n-chat-widget * { 
+            direction: rtl !important; 
+            text-align: right !important; 
+        }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
     a{color:inherit;text-decoration:none}
@@ -308,28 +308,27 @@
     hookForm('ok-he','err-he','f-he');
 	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 	
-	    createChat({
-	        webhookUrl: 'https://n8n.auto-runai.com/webhook/19b3b571-6d49-4246-a195-dccd4f46667c/chat',
-	        title: 'מוקד מידע שומרון',
-	        placeholder: 'איך אפשר לעזור?',
-	        welcomeMessage: 'שלום! אני העוזר הווירטואלי של המועצה.',
-	        showWelcomeMessage: true,
-	        // הגדרות השפה והכיוון הרשמיות של n8n
-	        i18n: {
-	            en: {
-	                title: 'מוקד מידע שומרון',
-	                textPlaceholder: 'איך אפשר לעזור?',
-	                welcomeMessage: 'שלום! אני העוזר הווירטואלי של המועצה.',
+	        createChat({
+	            webhookUrl: 'הכנס_כאן_את_הכתובת_שלך_מה_N8N', 
+	            i18n: {
+	                en: { // אנחנו משקרים לווידג'ט: הוא חושב שזה אנגלית, אבל אנחנו שמים עברית
+	                    title: 'מוקד מידע שומרון',
+	                    subtitle: 'מענה אוטומטי 24/7',
+	                    welcomeMessage: 'שלום! אני הבוט של המועצה. איך אפשר לעזור?',
+	                    getStarted: 'התחל שיחה',
+	                    inputPlaceholder: 'כתוב את השאלה שלך כאן...',
+	                }
+	            },
+	            style: {
+	                '--chat-container-direction': 'rtl',
+	                '--chat-layout-direction': 'rtl',
+	                '--chat-primary-color': '#004a99',
 	            }
-	        },
-	        style: {
-	            '--chat-primary-color': '#004a99',
-	            '--chat-container-direction': 'rtl',
-	        }
-	    });
+	        });
   </script>
 </body>
 </html>
+
 
 
 
