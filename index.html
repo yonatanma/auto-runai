@@ -306,23 +306,31 @@
     }
     hookForm('ok-en','err-en','f-en');
     hookForm('ok-he','err-he','f-he');
-
-import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js?v=2';
-
-    createChat({
-        webhookUrl: 'https://YOUR_PRODUCTION_URL/webhook/YOUR_ID', // ודא שזה ה-Production
-        title: 'מוקד מידע שומרון',
-        placeholder: 'איך אפשר לעזור?',
-        welcomeMessage: 'שלום! אני העוזר הווירטואלי של המועצה.',
-        showWelcomeMessage: true,
-        style: {
-            '--chat-container-direction': 'rtl',
-            '--chat-primary-color': '#004a99',
-        }
-    });
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+	
+	    createChat({
+	        webhookUrl: 'https://n8n.auto-runai.com/webhook/19b3b571-6d49-4246-a195-dccd4f46667c/chat',
+	        title: 'מוקד מידע שומרון',
+	        placeholder: 'איך אפשר לעזור?',
+	        welcomeMessage: 'שלום! אני העוזר הווירטואלי של המועצה.',
+	        showWelcomeMessage: true,
+	        // הגדרות השפה והכיוון הרשמיות של n8n
+	        i18n: {
+	            en: {
+	                title: 'מוקד מידע שומרון',
+	                textPlaceholder: 'איך אפשר לעזור?',
+	                welcomeMessage: 'שלום! אני העוזר הווירטואלי של המועצה.',
+	            }
+	        },
+	        style: {
+	            '--chat-primary-color': '#004a99',
+	            '--chat-container-direction': 'rtl',
+	        }
+	    });
   </script>
 </body>
 </html>
+
 
 
 
